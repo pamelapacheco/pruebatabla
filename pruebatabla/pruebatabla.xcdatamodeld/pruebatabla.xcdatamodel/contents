@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1810" systemVersion="11E53" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Carreras" representedClassName="Carreras" syncable="YES">
+        <attribute name="nombrecarr" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Personas" representedClassName="Personas" syncable="YES">
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Personas" positionX="-4302" positionY="-279" width="128" height="60"/>
+        <element name="Carreras" positionX="-4655" positionY="-126" width="128" height="60"/>
+    </elements>
+</model>

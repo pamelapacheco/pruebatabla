@@ -84,6 +84,8 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+#pragma mark - 
+
 - (IBAction)bfav:(id)sender {
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -141,6 +143,24 @@
     return cell;
 }
 
+#pragma mark - Configuracion del TextField
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.25];
+    [UIView commitAnimations];
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.25];
+    self.view.center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2,  [[UIScreen mainScreen] bounds].size.height/2-32);
+    [UIView commitAnimations];
+}
 
 
 #pragma mark - NSFetchedResultsController
@@ -179,23 +199,6 @@
     return fetchedResultsController;
 }
 
-#pragma mark - Configuracion del TextField
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    
-    [textField resignFirstResponder];
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.25];
-    [UIView commitAnimations];
-    return YES;
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES];
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.25];
-    self.view.center = CGPointMake([[UIScreen mainScreen] bounds].size.width/2,  [[UIScreen mainScreen] bounds].size.height/2-32);
-    [UIView commitAnimations];
-}
 
 @end
